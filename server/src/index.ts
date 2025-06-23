@@ -8,7 +8,10 @@ import messageRoutes from './routes/messageRoutes';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: '*', // or frontend URL
+}));
+
 app.use(express.json());
 
 app.use('/campaigns', campaignRoutes);
